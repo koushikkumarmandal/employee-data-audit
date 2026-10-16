@@ -37,6 +37,7 @@ As specified in Section 4 of the *CortexHR Developer Guide*, the handoff documen
 | :--- | :--- | :--- | :--- |
 | **Data Audit Report** | [`reports/data-audit.md`](./reports/data-audit.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/data-audit.md) | Full audit findings, decisions table, 40% missingness explanation, and "What I missed" comparison. |
 | **Baseline Report** | [`reports/baseline-report.md`](./reports/baseline-report.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/baseline-report.md) | 5-fold CV & locked test set metrics (ROC-AUC, PR-AUC, F1, Recall), threshold tuning, and HR trade-off analysis. |
+| **Attendance Anomaly Report** | [`reports/task4_report.md`](./reports/task4_report.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/task4_report.md) | Isolation Forest threshold tuning table, catch rate, false-alarm analysis, and operational rationale. |
 | **Phase 1 Review** | [`reports/phase-1-review.md`](./reports/phase-1-review.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/phase-1-review.md) | Official Phase 1 Review following the Section 10 guide template. |
 
 ---
