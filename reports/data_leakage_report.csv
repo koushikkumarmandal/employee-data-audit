@@ -1,0 +1,7 @@
+Column_Name,Decision
+exit_date,Exclude from prediction features
+resignation_date,Exclude from prediction features
+exit_reason,Exclude from prediction features
+exit_interview_done,Exclude from prediction features
+fnf_settlement_amount,Exclude from prediction features
+voluntary_left_within_12m,Exclude from prediction features

@@ -1,0 +1,32 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest & Testing Cache
+.pytest_cache/
+.coverage
+
+# Jupyter Checkpoints
+.ipynb_checkpoints/
+
+# IDE Settings
+.vscode/
+.idea/
+
+# Environment secrets (Developer Guide Section 5)
+.env
+.env.local
+
+# Local Archives
+*.zip
+
+# Operating System Files
+Thumbs.db
+.DS_Store

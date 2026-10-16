@@ -1,0 +1,43 @@
+Column_Name,Data_Type,Meaning
+row_id,int64,Row number in the dataset
+employee_id,object,Unique code for each employee
+observation_date,datetime64[ns],Date when employee information was recorded
+department_id,object,Code of the employee's department
+role_id,object,Code of the employee's job role
+job_level,int64,Employee's job seniority level
+work_location,object,City where the employee works
+work_mode,object,"Whether the employee works onsite, remotely, or hybrid"
+employment_type,object,Permanent or contract employment
+highest_education,object,Highest educational qualification
+tenure_months,int64,Number of months the employee has worked here
+total_experience_years,float64,Total work experience in years
+previous_employers_count,int64,Number of previous employers
+commute_distance_km,float64,Distance between home and office in kilometres
+annual_fixed_pay,int64,Employee's annual fixed salary
+comp_ratio,float64,Salary compared with the middle of the salary range
+raises_received,int64,Number of salary increases received
+last_raise_pct,float64,Percentage of the latest salary increase
+months_since_last_raise,int64,Months since the last salary increase
+promotions_received,int64,Number of promotions received
+months_since_last_promotion,float64,Months since the last promotion
+internal_transfers,int64,Number of internal department transfers
+last_performance_rating,float64,Most recent performance rating
+last_engagement_score,float64,Most recent employee engagement score
+manager_changes_12m,int64,Manager changes in the last 12 months
+training_hours_12m,float64,Training hours in the last 12 months
+attendance_rate_3m,float64,Attendance rate over the last three months
+late_arrivals_3m,int64,Number of late arrivals in three months
+avg_overtime_hours_per_month_3m,float64,Average monthly overtime hours
+avg_hours_worked_3m,float64,Average daily working hours
+wfh_share_3m,float64,Share of workdays spent working from home
+unpaid_leave_days_6m,float64,Unpaid leave days in six months
+paid_leave_days_6m,int64,Paid leave days in six months
+dept_attrition_rate_prior_12m,float64,Previous attrition rate of the department
+left_within_12m,int64,Target: whether the employee left within 12 months
+voluntary_left_within_12m,int64,Whether the employee left voluntarily
+source,object,Source from which the record originated
+exit_date,datetime64[ns],Employee's last working date
+resignation_date,datetime64[ns],Date the employee submitted a resignation
+exit_reason,object,Recorded reason for leaving
+exit_interview_done,object,Whether an exit interview was completed
+fnf_settlement_amount,float64,Final settlement amount paid when leaving

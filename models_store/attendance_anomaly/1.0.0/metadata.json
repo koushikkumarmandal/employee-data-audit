@@ -1,0 +1,26 @@
+{
+    "task": "Task 4 - Attendance Anomaly Detection",
+    "model": "IsolationForest",
+    "random_seed": 42,
+    "training_rows": 7120,
+    "total_scored_rows": 7339,
+    "features": [
+        "scheduled_days",
+        "present_days",
+        "wfh_days",
+        "half_days_unpaid",
+        "unpaid_absence_days",
+        "longest_unpaid_streak_days",
+        "late_arrivals",
+        "avg_hours_worked",
+        "overtime_hours",
+        "attendance_rate"
+    ],
+    "threshold": 0.02730283956178421,
+    "threshold_percentile": 95,
+    "catch_rate": 1.0,
+    "false_alarm_rate": 0.05,
+    "precision": 0.3808695652173913,
+    "selection_rule": "Highest catch rate while false alarms stay <= 5%",
+    "note": "Tuned against injected synthetic anomalies. Real flags must be reviewed by HR."
+}

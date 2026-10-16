@@ -1,0 +1,43 @@
+Column_Name,Missing_Count,Missing_Percentage,Decision
+resignation_date,2068,86.5634156550858,Keep; no missing values
+exit_reason,2040,85.39137714524905,Keep; no missing values
+exit_date,2040,85.39137714524905,Keep; no missing values
+exit_interview_done,2040,85.39137714524905,Keep; no missing values
+fnf_settlement_amount,2040,85.39137714524905,Keep; no missing values
+months_since_last_promotion,1459,61.07157806613645,Keep; no missing values
+last_engagement_score,528,22.101297614064464,Keep; no missing values
+last_raise_pct,202,8.455420678107995,Keep; no missing values
+last_performance_rating,182,7.618250313938886,Keep; no missing values
+commute_distance_km,55,2.3022185014650485,Fill with Unknown if appropriate
+highest_education,15,0.6278777731268314,Keep; no missing values
+employment_type,0,0.0,Keep; no missing values
+work_location,0,0.0,Keep; no missing values
+job_level,0,0.0,Consider median imputation
+department_id,0,0.0,Keep; no missing values
+role_id,0,0.0,Keep; no missing values
+observation_date,0,0.0,Keep; no missing values
+employee_id,0,0.0,Consider median imputation
+row_id,0,0.0,Keep; no missing values
+work_mode,0,0.0,Keep; no missing values
+annual_fixed_pay,0,0.0,Flag and investigate; consider dropping
+comp_ratio,0,0.0,Keep; no missing values
+raises_received,0,0.0,Consider median imputation
+previous_employers_count,0,0.0,Consider median imputation
+total_experience_years,0,0.0,Keep; no missing values
+tenure_months,0,0.0,Keep; no missing values
+training_hours_12m,0,0.0,Keep; no missing values
+manager_changes_12m,0,0.0,Keep; no missing values
+promotions_received,0,0.0,Keep; no missing values
+internal_transfers,0,0.0,Keep; no missing values
+months_since_last_raise,0,0.0,Keep; no missing values
+attendance_rate_3m,0,0.0,Keep; no missing values
+avg_overtime_hours_per_month_3m,0,0.0,Keep; no missing values
+late_arrivals_3m,0,0.0,Keep; no missing values
+dept_attrition_rate_prior_12m,0,0.0,Check missing target; exclude unknown labels
+paid_leave_days_6m,0,0.0,Exclude from prediction features
+unpaid_leave_days_6m,0,0.0,Keep; no missing values
+wfh_share_3m,0,0.0,Exclude from prediction features
+avg_hours_worked_3m,0,0.0,Exclude from prediction features
+source,0,0.0,Exclude from prediction features
+left_within_12m,0,0.0,Exclude from prediction features
+voluntary_left_within_12m,0,0.0,Exclude from prediction features

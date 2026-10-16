@@ -1,0 +1,8 @@
+{
+    "model_name": "Logistic Regression Balanced",
+    "threshold_60_recall": 0.48999999999999994,
+    "recall_at_threshold": 0.6,
+    "precision_at_threshold": 0.2441860465116279,
+    "test_roc_auc": 0.68002808002808,
+    "test_pr_auc": 0.34108070443358957
+}
