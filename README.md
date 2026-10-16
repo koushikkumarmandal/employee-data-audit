@@ -1,4 +1,4 @@
-# CortexHR — AI/ML Developer Submission (Phase 1)
+# CortexHR — AI/ML Developer Submission 
 **WorkforceOS · Section 2 · The AI Intelligence Layer**  
 **Tasks 1 to 4: Data Foundations, Reusable Pipeline, Baseline Models & Attendance Anomaly Detection**
 
