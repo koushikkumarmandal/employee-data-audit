@@ -1,13 +1,3 @@
-"""
-Tests for our feature pipeline.
-
-IMPORTANT: the data in these tests is FAKE (made-up numbers).
-It only checks that our CODE works. It says NOTHING about the company.
-(This follows our project rule about synthetic test data.)
-
-Run from the project root:   pytest
-"""
-
 import numpy as np
 import pandas as pd
 import joblib
@@ -20,23 +10,20 @@ from src.features.build_features import (
 )
 
 
-# --------------------------------------------------------
+
 # Make FAKE data with the same column names as the real file
-# --------------------------------------------------------
+
 def make_fake_data(rows=100):
-    rng = np.random.default_rng(42)   # fixed seed = same fake data every time
+    rng = np.random.default_rng(42)  
     return pd.DataFrame({
-        # id + leakage columns (should get REMOVED by clean_data):
         "employee_id": [f"EMP-{i}" for i in range(rows)],
         "exit_date": np.nan,
-        # text columns:
         "department_id": rng.choice(["D01", "D02"], rows),
         "role_id": rng.choice(["R001", "R002"], rows),
         "work_location": rng.choice(["Pune", "delhi ncr"], rows),
         "work_mode": rng.choice(["Remote", "Hybrid"], rows),
         "employment_type": rng.choice(["Permanent", "Contract"], rows),
         "highest_education": rng.choice(["B.E.", "MCA", np.nan], rows),  # some missing
-        # number columns:
         "job_level": rng.integers(1, 6, rows),
         "tenure_months": rng.integers(1, 200, rows),
         "total_experience_years": rng.uniform(0, 30, rows),
@@ -66,9 +53,6 @@ def make_fake_data(rows=100):
     })
 
 
-# --------------------------------------------------------
-# Helper: fit the pipeline on fake TRAIN data (like real life)
-# --------------------------------------------------------
 def fit_on_fake_data():
     clean = clean_data(make_fake_data())
     X = clean.drop(columns=[TARGET])
@@ -80,10 +64,7 @@ def fit_on_fake_data():
     pipe.fit(X_train, y_train)   # train only, like real life
     return pipe, X_test
 
-
-# --------------------------------------------------------
-# The tests
-# --------------------------------------------------------
+# test
 def test_1_bad_columns_are_removed():
     """Leakage and id columns must be gone after cleaning."""
     clean = clean_data(make_fake_data())
@@ -121,6 +102,6 @@ def test_5_saved_pipeline_works_the_same(tmp_path):
 
     loaded_pipe, info = load_pipeline(file)
 
-    assert info["pipeline_version"] == PIPELINE_VERSION      # version saved
+    assert info["pipeline_version"] == PIPELINE_VERSION 
     assert np.array_equal(pipe.transform(X_test),
-                          loaded_pipe.transform(X_test))     # same output
+                          loaded_pipe.transform(X_test)) 
