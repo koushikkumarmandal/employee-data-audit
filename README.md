@@ -4,31 +4,44 @@
 
 ---
 
-## 1. Project Overview
+## 1. Submission & Repository Links
+
+* **Official GitHub Repository:** [https://github.com/koushikkumarmandal/employee-data-audit](https://github.com/koushikkumarmandal/employee-data-audit)
+* **Release Version Tag:** [`v1.0.0`](https://github.com/koushikkumarmandal/employee-data-audit/releases/tag/v1.0.0)
+* **Packaged Submission Archive (ZIP):** [`CortexHR_Phase1_Submission.zip`](./CortexHR_Phase1_Submission.zip) (Contains the complete standalone bundle of reports, notebooks, models, code, and Dockerfile ready for review portal upload).
+
+### Task Branches for Pull Requests:
+* **Task 1 Branch:** [`task-1-data-audit`](https://github.com/koushikkumarmandal/employee-data-audit/tree/task-1-data-audit)
+* **Task 2 Branch:** [`task-2-feature-pipeline`](https://github.com/koushikkumarmandal/employee-data-audit/tree/task-2-feature-pipeline)
+* **Task 3 Branch:** [`task-3-attrition-baselines`](https://github.com/koushikkumarmandal/employee-data-audit/tree/task-3-attrition-baselines)
+* **Task 4 Branch:** [`task-4-attendance-anomalies`](https://github.com/koushikkumarmandal/employee-data-audit/tree/task-4-attendance-anomalies)
+
+---
+
+## 2. Project Overview
 
 This repository contains the completed, tested, and containerized implementation for **Phase 1 (Tasks 1 to 4)** of the CortexHR AI/ML project.
 
-**Task 1 — Data Audit & Exploration:** Audited the master dataset (`2,389` rows, `42` columns), cataloged 6 data leakage columns, 6 duplicate rows, impossible values, typos, and class imbalance.
-**Task 2 — Reusable Feature Pipeline:** Built the `cortexhr_features` package with 6 custom engineered features (`salary_vs_dept_median`, `tenure_years`, `raise_overdue`, `unpaid_per_month`, `attendance_gap`, `overtime_load`). Fits on training data only with zero data leakage.
-**Task 3 — Attrition Baseline Models:** Plugs the Task 2 pipeline directly into Dummy, Logistic Regression, and Decision Tree baselines. Evaluated with 5-fold Stratified Cross-Validation and locked 20% test set. Threshold tuned to `0.490` for $\ge 60\%$ recall.
-**Task 4 — Attendance Anomaly Detection:** Trained Isolation Forest with 300 trees on unpaid-based attendance features (protecting maternity leave). Tuned threshold to 95th percentile, achieving **100% catch rate** with **5.0% false-alarm rate**.
+* **Task 1 — Data Audit & Exploration:** Audited the master dataset (`2,389` rows, `42` columns), cataloged 6 data leakage columns, 6 duplicate rows, impossible values, typos, and class imbalance.
+* **Task 2 — Reusable Feature Pipeline:** Built the `cortexhr_features` package with 6 custom engineered features (`salary_vs_dept_median`, `tenure_years`, `raise_overdue`, `unpaid_per_month`, `attendance_gap`, `overtime_load`). Fits on training data only with zero data leakage.
+* **Task 3 — Attrition Baseline Models:** Plugs the Task 2 pipeline directly into Dummy, Logistic Regression, and Decision Tree baselines. Evaluated with 5-fold Stratified Cross-Validation and locked 20% test set. Threshold tuned to `0.490` for $\ge 60\%$ recall.
+* **Task 4 — Attendance Anomaly Detection:** Trained Isolation Forest with 300 trees on unpaid-based attendance features (protecting maternity leave). Tuned threshold to 95th percentile, achieving **100% catch rate** with **5.0% false-alarm rate**.
 
 ---
 
-## 2. Handoff Package (Required Reports)
+## 3. Handoff Package (Required Reports)
 
-As specified in Section 4 of the *CortexHR Developer Guide*, the handoff documents are located in [`reports/`](./reports/):
+As specified in Section 4 of the *CortexHR Developer Guide*, the handoff documents are published in [`reports/`](./reports/):
 
-| Report Name | Path | Description |
-| :--- | :--- | :--- |
-| **Data Audit Report** | [`reports/data-audit.md`](./reports/data-audit.md) | Full audit findings, decisions table, 40% missingness explanation, and "What I missed" comparison. |
-| **Baseline Report** | [`reports/baseline-report.md`](./reports/baseline-report.md) | 5-fold CV & locked test set metrics (ROC-AUC, PR-AUC, F1, Recall), threshold tuning, and HR trade-off analysis. |
-| **Attendance Anomaly Report** | [`reports/task4_report.md`](./reports/task4_report.md) | Isolation Forest threshold tuning table, catch rate, false-alarm analysis, and operational rationale. |
-| **Phase 1 Review** | [`reports/phase-1-review.md`](./reports/phase-1-review.md) | Official Phase 1 Review following the Section 10 guide template. |
+| Report Name | Local Path | Direct GitHub Link | Description |
+| :--- | :--- | :--- | :--- |
+| **Data Audit Report** | [`reports/data-audit.md`](./reports/data-audit.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/data-audit.md) | Full audit findings, decisions table, 40% missingness explanation, and "What I missed" comparison. |
+| **Baseline Report** | [`reports/baseline-report.md`](./reports/baseline-report.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/baseline-report.md) | 5-fold CV & locked test set metrics (ROC-AUC, PR-AUC, F1, Recall), threshold tuning, and HR trade-off analysis. |
+| **Phase 1 Review** | [`reports/phase-1-review.md`](./reports/phase-1-review.md) | [View on GitHub](https://github.com/koushikkumarmandal/employee-data-audit/blob/main/reports/phase-1-review.md) | Official Phase 1 Review following the Section 10 guide template. |
 
 ---
 
-## 3. Assumptions (CortexHR Guide Requirement)
+## 4. Assumptions (CortexHR Guide Requirement)
 
 Per developer guide rules, all assumptions made during development are documented here:
 1. **Missing Data Policy (> 2% Missing):** For numeric columns with $> 2\%$ missing values (`months_since_last_promotion`, `last_engagement_score`, `last_raise_pct`, `last_performance_rating`, `commute_distance_km`), values are filled with the training median and a `"was_missing"` binary indicator is generated to preserve predictive business signal.
